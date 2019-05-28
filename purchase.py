@@ -8,6 +8,8 @@ import os
 from trytond.transaction import Transaction
 from trytond.modules.purchase_edi.purchase import DATE_FORMAT
 from trytond.modules.product import price_digits
+from trytond.i18n import gettext
+from trytond.exceptions import UserError
 import datetime
 from edifact.message import Message
 from edifact.control import Characters
@@ -28,11 +30,11 @@ DEFAULT_FILES_LOCATION = '/tmp/'
 
 # EDI to Tryton UOMS mapping
 UOMS_EDI_TO_TRYTON = {
-    'KGM': u'kg',
-    'PCE': u'u',
-    'LTR': u'l',
-    'GRM': u'g',
-    'MTR': u'm',
+    'KGM': 'kg',
+    'PCE': 'u',
+    'LTR': 'l',
+    'GRM': 'g',
+    'MTR': 'm',
 }
 MODULE_PATH = os.path.dirname(os.path.abspath(__file__))
 DEFAULT_TEMPLATE = 'ORDRSP_ediversa.yml'
@@ -43,8 +45,7 @@ def get_datetime_obj_from_edi_date(edi_date):
     return datetime.datetime.strptime(edi_date, DATE_FORMAT)
 
 
-class Purchase:
-    __metaclass__ = PoolMeta
+class Purchase(metaclass=PoolMeta):
     __name__ = 'purchase.purchase'
 
     edi_answered_state = fields.Selection([
@@ -100,9 +101,6 @@ class Purchase:
                 'readonly': ~Eval('edi_state').in_(['sended']),
                 'invisible': ~Eval('edi_state').in_(['sended'])
                 }
-            })
-        cls._error_messages.update({
-            'no_edi_response': ('There isn\'t response for purchase %(num)s')
             })
 
     @classmethod
@@ -303,7 +301,7 @@ class Purchase:
                         errors_path,
                         'error_{}.EDI'.format(os.path.splitext(basename)[0]))
                     with open(error_fname, 'w') as fp:
-                        fp.write(u'\n'.join(errors))
+                        fp.write('\n'.join(errors))
         if to_write:
             cls.write(*to_write)
             result = to_write[0]
@@ -329,12 +327,10 @@ class Purchase:
         result = cls.import_edi_responses(purchases)
         without_response = list(set(purchases) - set(result))
         for purchase in without_response:
-            cls.raise_user_error('no_edi_response', {
-                    'num': purchase.number})
+            raise UserError(gettext('no_edi_response', num=purchase.number))
 
 
-class PurchaseLine:
-    __metaclass__ = PoolMeta
+class PurchaseLine(metaclass=PoolMeta):
     __name__ = 'purchase.line'
 
     edi_response = fields.One2Many('purchase.edi.order.response.lin', 'line',
@@ -462,8 +458,8 @@ class EdiOrderResponseLine(ModelView, ModelSQL):
     def get_product(self, name):
         pass
 
-class PurchaseConfiguration:
-    __metaclass__ = PoolMeta
+
+class PurchaseConfiguration(metaclass=PoolMeta):
     __name__ = 'purchase.configuration'
 
     inbox_path_edi = fields.Char('Inbox Path EDI')
