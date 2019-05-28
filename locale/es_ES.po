@@ -1,0 +1,291 @@
+#
+msgid ""
+msgstr "Content-Type: text/plain; charset=utf-8\n"
+
+msgctxt "error:purchase.purchase:"
+msgid "There isn't response for purchase %(num)s"
+msgstr "No hay respuesta para la compra %(num)s"
+
+msgctxt "field:purchase.configuration,errors_path_edi:"
+msgid "Errors Path"
+msgstr "Path de errores"
+
+msgctxt "field:purchase.configuration,inbox_path_edi:"
+msgid "Inbox Path EDI"
+msgstr "Path de entrada EDI"
+
+msgctxt "field:purchase.configuration,outbox_path_edi:"
+msgid "Outbox Path EDI"
+msgstr "Path de salida EDI"
+
+msgctxt "field:purchase.configuration,template_response_edi:"
+msgid "Template EDI Used for Response"
+msgstr "Plantilla EDI usada para la Respuesta"
+
+msgctxt "field:purchase.edi.order.response.lin,base_amount:"
+msgid "Base Amount"
+msgstr "Importe base"
+
+msgctxt "field:purchase.edi.order.response.lin,cause:"
+msgid "Cause"
+msgstr "Causa"
+
+msgctxt "field:purchase.edi.order.response.lin,changes_applied:"
+msgid "EDI Changes Applied"
+msgstr "Cambios EDI aplicados"
+
+msgctxt "field:purchase.edi.order.response.lin,code:"
+msgid "Code"
+msgstr "Código"
+
+msgctxt "field:purchase.edi.order.response.lin,create_date:"
+msgid "Create Date"
+msgstr "Fecha de creación"
+
+msgctxt "field:purchase.edi.order.response.lin,create_uid:"
+msgid "Create User"
+msgstr "Usuario de creación"
+
+msgctxt "field:purchase.edi.order.response.lin,delivery_date:"
+msgid "Delivery Date"
+msgstr "Fecha de entrega"
+
+msgctxt "field:purchase.edi.order.response.lin,description:"
+msgid "Description"
+msgstr "Descripción"
+
+msgctxt "field:purchase.edi.order.response.lin,id:"
+msgid "ID"
+msgstr "ID"
+
+msgctxt "field:purchase.edi.order.response.lin,line:"
+msgid "Line"
+msgstr "Línea"
+
+msgctxt "field:purchase.edi.order.response.lin,line_code:"
+msgid "Line Code"
+msgstr "Código de línea"
+
+msgctxt "field:purchase.edi.order.response.lin,price:"
+msgid "Price"
+msgstr "Precio"
+
+msgctxt "field:purchase.edi.order.response.lin,product:"
+msgid "Product"
+msgstr "Productos"
+
+msgctxt "field:purchase.edi.order.response.lin,quantity:"
+msgid "Quantity"
+msgstr "Cantidad"
+
+msgctxt "field:purchase.edi.order.response.lin,quantity_by_price:"
+msgid "Quantity by Price"
+msgstr "Cantidad por precio"
+
+msgctxt "field:purchase.edi.order.response.lin,quantity_not_served:"
+msgid "Quantity Not Served"
+msgstr "Cantidad no servida"
+
+msgctxt "field:purchase.edi.order.response.lin,quantity_on_stock:"
+msgid "Quantity On Stock"
+msgstr "Cantidad en stock"
+
+msgctxt "field:purchase.edi.order.response.lin,reason:"
+msgid "Reason"
+msgstr "Razón"
+
+msgctxt "field:purchase.edi.order.response.lin,rec_name:"
+msgid "Name"
+msgstr "Nombre"
+
+msgctxt "field:purchase.edi.order.response.lin,state:"
+msgid "State"
+msgstr "Estado"
+
+msgctxt "field:purchase.edi.order.response.lin,total:"
+msgid "Total"
+msgstr "Total"
+
+msgctxt "field:purchase.edi.order.response.lin,unit:"
+msgid "Uom"
+msgstr "UdM"
+
+msgctxt "field:purchase.edi.order.response.lin,unit_digits:"
+msgid "Unit Digits"
+msgstr "Dígitos unidad"
+
+msgctxt "field:purchase.edi.order.response.lin,write_date:"
+msgid "Write Date"
+msgstr "Fecha modificación"
+
+msgctxt "field:purchase.edi.order.response.lin,write_uid:"
+msgid "Write User"
+msgstr "Usuario modificación"
+
+msgctxt "field:purchase.line,edi_response:"
+msgid "EDI Response Line"
+msgstr "Línea de Respuesta EDI"
+
+msgctxt "field:purchase.purchase,edi_answered_on:"
+msgid "Answered On"
+msgstr "Fecha de respuesta"
+
+msgctxt "field:purchase.purchase,edi_answered_state:"
+msgid "EDI Response State"
+msgstr "Estado de Respuesta"
+
+msgctxt "field:purchase.purchase,edi_base_amount:"
+msgid "EDI Base Amount"
+msgstr "Importe total"
+
+msgctxt "field:purchase.purchase,edi_response_delivery_date:"
+msgid "EDI Response Delivery Date"
+msgstr "Fecha de entrega"
+
+msgctxt "field:purchase.purchase,edi_response_lines_to_review:"
+msgid "Response Lines"
+msgstr "Líneas de Respuesta"
+
+msgctxt "field:purchase.purchase,edi_total_amount:"
+msgid "EDI Total Amount"
+msgstr "Importe total"
+
+msgctxt "model:purchase.edi.order.response.lin,name:"
+msgid "EDI ORDER Response Line"
+msgstr "Línea de Respuesta de Orden EDI"
+
+msgctxt "selection:purchase.edi.order.response.lin,cause:"
+msgid "Available now - planned shipment"
+msgstr "Disponible ahora - envío planeado"
+
+msgctxt "selection:purchase.edi.order.response.lin,cause:"
+msgid "Exhausted item in the wholesaler"
+msgstr "Artículo agotado en el mayorista"
+
+msgctxt "selection:purchase.edi.order.response.lin,cause:"
+msgid "In process-planned shipment"
+msgstr "Proceso de envío planificado"
+
+msgctxt "selection:purchase.edi.order.response.lin,cause:"
+msgid "Next carrier"
+msgstr "Próximo al transportista"
+
+msgctxt "selection:purchase.edi.order.response.lin,cause:"
+msgid "Partial shipment considered complete without supplementary shipment"
+msgstr "Envío parcial considerado completo sin envío suplementario"
+
+msgctxt "selection:purchase.edi.order.response.lin,cause:"
+msgid "Partial shipment that will be followed by a complementary shipment"
+msgstr "Envío parcial que irá seguido por un envío complementario"
+
+msgctxt "selection:purchase.edi.order.response.lin,cause:"
+msgid "Product sold out due to force majeure"
+msgstr "Producto agotado por fuerza mayor"
+
+msgctxt "selection:purchase.edi.order.response.lin,cause:"
+msgid "Product temporarily unavailable by the wholesaler"
+msgstr "Producto no disponible temporalmente por el mayorista"
+
+msgctxt "selection:purchase.edi.order.response.lin,cause:"
+msgid "Product that has been left to manufacture"
+msgstr "Producto que se ha dejado fabricar"
+
+msgctxt "selection:purchase.edi.order.response.lin,cause:"
+msgid "Product without factory stock"
+msgstr "Producto sin stock de fábrica"
+
+msgctxt "selection:purchase.edi.order.response.lin,cause:"
+msgid "Product written off by the wholesaler"
+msgstr "Producto cancelado por el mayorista"
+
+msgctxt "selection:purchase.edi.order.response.lin,cause:"
+msgid "Supplementary delivery of a previous order"
+msgstr "Entrega suplementaria de un pedido anterior"
+
+msgctxt "selection:purchase.edi.order.response.lin,reason:"
+msgid "Adjustment"
+msgstr "Ajuste"
+
+msgctxt "selection:purchase.edi.order.response.lin,reason:"
+msgid "Out of inventory"
+msgstr "Fuera de inventario"
+
+msgctxt "selection:purchase.edi.order.response.lin,reason:"
+msgid "Pack difference"
+msgstr "Diferencia de bulto"
+
+msgctxt "selection:purchase.edi.order.response.lin,reason:"
+msgid "Quantity and Unit of Measure Alternatives"
+msgstr "Cantidad y Unidades de Medida alternativas"
+
+msgctxt "selection:purchase.edi.order.response.lin,reason:"
+msgid "The amount requested doesn't match the agreement"
+msgstr "La cantidad solicitada no coincide con la acordada"
+
+msgctxt "selection:purchase.edi.order.response.lin,reason:"
+msgid "The order represents a replacement of the original order"
+msgstr "El pedido representa un reemplazo del pedido original"
+
+msgctxt "selection:purchase.edi.order.response.lin,reason:"
+msgid "Unit of measure difference"
+msgstr "Diferencia de unidad de medida"
+
+msgctxt "selection:purchase.edi.order.response.lin,reason:"
+msgid "Unknown product code"
+msgstr "Código de producto desconocido"
+
+msgctxt "selection:purchase.edi.order.response.lin,state:"
+msgid "Accepted"
+msgstr "Aceptada"
+
+msgctxt "selection:purchase.edi.order.response.lin,state:"
+msgid "Accepted with Correction"
+msgstr "Aceptado con corrección"
+
+msgctxt "selection:purchase.edi.order.response.lin,state:"
+msgid "Added"
+msgstr "Añadida"
+
+msgctxt "selection:purchase.edi.order.response.lin,state:"
+msgid "Changed"
+msgstr "Cambiada"
+
+msgctxt "selection:purchase.edi.order.response.lin,state:"
+msgid "Not accepted"
+msgstr "No Aceptado"
+
+msgctxt "selection:purchase.purchase,edi_answered_state:"
+msgid ""
+msgstr ""
+
+msgctxt "selection:purchase.purchase,edi_answered_state:"
+msgid "Accepted"
+msgstr "Aceptado"
+
+msgctxt "selection:purchase.purchase,edi_answered_state:"
+msgid "change"
+msgstr "Cambio"
+
+msgctxt "selection:purchase.purchase,edi_answered_state:"
+msgid "not accepted"
+msgstr "No aceptado"
+
+msgctxt "selection:purchase.purchase,edi_answered_state:"
+msgid "not process"
+msgstr "No procesado"
+
+msgctxt "view:purchase.edi.order.response.lin:"
+msgid "Apply Changes"
+msgstr "Aplicar cambios"
+
+msgctxt "view:purchase.line:"
+msgid "EDI"
+msgstr "EDI"
+
+msgctxt "view:purchase.purchase:"
+msgid "Get EDI Response"
+msgstr "Obtener respuesta EDI"
+
+msgctxt "view:purchase.purchase:"
+msgid "Response"
+msgstr "Respuesta"

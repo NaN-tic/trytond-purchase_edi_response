@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!-- The COPYRIGHT file at the top level of this repository contains the full
+     copyright notices and license terms. -->
+<data>
+    <xpath expr="/form/notebook/page[@id='edi_page']/separator[@id='outgoing_msg']" position="before">
+        <button string="Get EDI Response" name="get_edi_response" colspan='2'/>
+    </xpath>
+    <xpath expr="/form/notebook/page[@id='edi_page']/field[@name='sended_on']" position="after">
+        <separator id="response_msg" string="Response" colspan="4"/>
+        <label name="edi_answered_state"/>
+        <field name="edi_answered_state"/>
+        <newline/>
+        <label name="edi_answered_on"/>
+        <field name="edi_answered_on"/>
+        <newline/>
+        <label name="edi_response_delivery_date"/>
+        <field name="edi_response_delivery_date" widget="datetime"/>
+        <newline/>
+        <label name="edi_base_amount"/>
+        <field name="edi_base_amount"/>
+        <newline/>
+        <label name="edi_total_amount"/>
+        <field name="edi_total_amount"/>
+        <newline/>
+        <field name="edi_response_lines_to_review" colspan="4"/>
+    </xpath>
+</data>

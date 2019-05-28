@@ -1,0 +1,27 @@
+control_chars:
+    data_separator: '|'
+    segment_terminator: "\n"
+header:
+    ORDRSP_D_96A_UN_EAN005: []
+    BGM: ['!value', '231', !!python/tuple ['4', '12', '27', '29']]
+    DTM: ['!value'] 
+    RFF: ['ON', '!value']
+    # NADMS: ['!value']
+    # NADMR: ['!value']
+    # NADSU: ['!value']
+    # NADBY: ['!value']
+    # NADDP: ['!value']
+    # NADIV: ['!value']
+    # CUX: ['!value'] 
+detail:
+    #LIN: ['!value', 'EN', '!value', !!python/tuple ['3', '5', '7', '6']]
+    #PIALIN: ['IN', '!value']
+    #IMDLIN: ['F', '', '!value']
+    #QTYLIN: [!!python/tuple ['21', 59], '!value', !!python/tuple ['', 'KGM', 'LTR', 'MTR', 'PCE', 'GRM']]
+    #DTMLIN: ['!value']
+    #MOALIN: ['!value', '!value']
+    #QVRLIN: ['!value', '21', !!python/tuple ['AA', 'AB', 'AD', 'AS', 'BK', 'BP', 'CP', 'CN', 'PS', 'OS', 'OW', 'TW'], !!python/tuple ['AIT', 'AUE', 'AV', 'AQ', 'IS', 'PC', 'UM', 'VW']]
+    #PRILIN: [!!python/tuple ['AAA', 'NTP'], '!value', !!python/tuple ['!value', '']]
+    #RFFLIN: ['LI', '!value']
+resume:
+    MOARES: []

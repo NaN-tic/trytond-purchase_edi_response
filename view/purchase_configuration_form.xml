@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!-- The COPYRIGHT file at the top level of this repository contains the full
+     copyright notices and license terms. -->
+<data>
+    <xpath expr="/form/label[@name='outbox_path_edi']"
+        position="before">
+        <newline/>
+        <label name="inbox_path_edi"/>
+        <field name="inbox_path_edi" colspan="3"/>
+        <newline/>
+    </xpath>
+    <xpath expr="/form/field[@name='outbox_path_edi']"
+        position="after">
+        <newline/>
+        <label name="template_response_edi"/>
+        <field name="template_response_edi" colspan="3"/>
+        <newline/>
+    </xpath>
+</data>

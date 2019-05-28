@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!-- The COPYRIGHT file at the top level of this repository contains the full
+     copyright notices and license terms. -->
+<tree>
+    <field name="line"/>
+    <field name="description"/>
+    <field name="product"/>
+    <field name="code"/>
+    <field name="line_code"/>
+    <field name="state"/>
+    <field name="quantity"/>
+    <field name="quantity_on_stock"/>
+    <field name="quantity_not_served"/>
+    <field name="unit"/>
+    <field name="base_amount"/>
+    <field name="total"/>
+    <field name="cause"/>
+    <field name="reason"/>
+    <field name="price"/>
+    <field name="quantity_by_price"/>
+    <field name="delivery_date" widget="date"/>
+    <button string="Apply Changes" name="apply_changes_to_purchase_line"/>
+</tree>
