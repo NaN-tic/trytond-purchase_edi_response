@@ -427,21 +427,22 @@ class EdiOrderResponseLine(ModelView, ModelSQL):
     delivery_date = fields.DateTime('Delivery Date', states={
             'readonly': True})
 
-    @classmethod
-    def __setup__(cls):
-        super(EdiOrderResponseLine, cls).__setup__()
-        cls._buttons.update({
-            'apply_changes_to_purchase_line': {
-                'invisible': ~Eval('state').in_([3, 6]),
-                'readonly': Eval('changes_applied')
-                }
-            })
+    # TODO: Apply changes to purchase lines
+    # @classmethod
+    # def __setup__(cls):
+    #     super(EdiOrderResponseLine, cls).__setup__()
+    #     cls._buttons.update({
+    #         'apply_changes_to_purchase_line': {
+    #             'invisible': ~Eval('state').in_([3, 6]),
+    #             'readonly': Eval('changes_applied')
+    #             }
+    #         })
 
-    @classmethod
-    @ModelView.button
-    def apply_changes_to_purchase_line(cls, edi_lines):
-        for edi_line in edi_lines:
-            pass
+    # @classmethod
+    # @ModelView.button
+    # def apply_changes_to_purchase_line(cls, edi_lines):
+    #     for edi_line in edi_lines:
+    #         pass
 
     @staticmethod
     def get_tryton_unit(edi_unit):
@@ -458,6 +459,8 @@ class EdiOrderResponseLine(ModelView, ModelSQL):
             return self.unit.digits
         return 2
 
+    def get_product(self, name):
+        pass
 
 class PurchaseConfiguration:
     __metaclass__ = PoolMeta

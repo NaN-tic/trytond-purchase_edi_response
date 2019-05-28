@@ -19,5 +19,5 @@
     <field name="price"/>
     <field name="quantity_by_price"/>
     <field name="delivery_date" widget="date"/>
-    <button string="Apply Changes" name="apply_changes_to_purchase_line"/>
+    <!--<button string="Apply Changes" name="apply_changes_to_purchase_line"/>-->
 </tree>

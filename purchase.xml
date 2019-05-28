@@ -14,6 +14,12 @@
             <field name="inherit" ref="purchase.purchase_view_tree"/>
             <field name="name">purchase_tree</field>
         </record>
+        <record model="ir.model.button" id="get_edi_response_button">
+            <field name="name">get_edi_response</field>
+            <field name="string">Get EDI Response</field>
+            <field name="model"
+                search="[('model', '=', 'purchase.purchase')]"/>
+        </record>
         <!-- purchase.line -->
         <record model="ir.ui.view" id="purchase_line_view_form">
             <field name="model">purchase.line</field>
@@ -32,19 +38,5 @@
             <field name="inherit" ref="purchase.purchase_configuration_view_form"/>
             <field name="name">purchase_configuration_form</field>
         </record>
-        <!-- Import EDI Purchase Orders Response cron -->
-        <!--
-        <record model="ir.cron" id="cron_update_edi_orders_state">
-            <field name="name">Import Purchase EDI Orders Response</field>
-            <field name="request_user" ref="res.user_admin"/>
-            <field name="user" ref="user_edi_orders"/>
-            <field name="active" eval="True"/>
-            <field name="interval_number" eval="1"/>
-            <field name="interval_type">days</field>
-            <field name="number_calls" eval="-1"/>
-            <field name="repeat_missed" eval="False"/>
-            <field name="model">purchase.purchase</field>
-            <field name="function">import_edi_responses_cron</field>
-        </record>-->
     </data>
 </tryton>
