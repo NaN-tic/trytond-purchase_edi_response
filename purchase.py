@@ -286,7 +286,7 @@ class Purchase:
             with open(fname, 'rb') as fp:
                 response = fp.read()
             try:
-                response = response.encode('utf-8')
+                response = unicode(response, 'iso-8859-1')
                 purchase, errors = cls.import_edi_response(response,
                     copy.deepcopy(template), purchases)
             except RuntimeError:
