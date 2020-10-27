@@ -284,7 +284,7 @@ class Purchase(metaclass=PoolMeta):
             with open(fname, 'rb') as fp:
                 response = fp.read()
             try:
-                response = response.encode('utf-8')
+                response = response.decode('utf-8')
                 purchase, errors = cls.import_edi_response(response,
                     copy.deepcopy(template), purchases)
             except RuntimeError:
