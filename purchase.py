@@ -265,9 +265,10 @@ class Purchase(metaclass=PoolMeta):
         configuration = Configuration(1)
         source_path = os.path.abspath(configuration.inbox_path_edi or
             DEFAULT_FILES_LOCATION)
-        files = [os.path.join(source_path, fp) for fp in
-                 os.listdir(source_path) if os.path.isfile(os.path.join(
-                     source_path, fp))]
+        files = [os.path.join(parent, name)
+            for (parent, subdirs, files) in os.walk(source_path)
+                for name in files + subdirs
+                    if os.path.isfile(os.path.join(parent, name))]
         files_to_delete = []
         errors_path = os.path.abspath(configuration.errors_path_edi or
             DEFAULT_FILES_LOCATION)
