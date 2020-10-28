@@ -19,6 +19,7 @@ from edifact.utils import (with_segment_check,
 import oyaml as yaml
 from io import open
 import copy
+import chardet
 from decimal import Decimal
 
 
@@ -284,13 +285,20 @@ class Purchase(metaclass=PoolMeta):
                 continue
             with open(fname, 'rb') as fp:
                 response = fp.read()
+            code = chardet.detect(response)
             try:
+                response = response.decode(code['encoding'])
+                purchase, errors = cls.import_edi_response(response,
+                    copy.deepcopy(template), purchases)
+            except UnicodeDecodeError:
                 response = response.decode('utf-8')
                 purchase, errors = cls.import_edi_response(response,
                     copy.deepcopy(template), purchases)
             except RuntimeError:
                 continue
-            else:
+            except:
+                continue
+            finally:
                 basename = os.path.basename(fname)
                 if purchase:
                     with Transaction().set_user(0, set_context=True):
