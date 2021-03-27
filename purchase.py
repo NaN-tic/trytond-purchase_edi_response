@@ -14,18 +14,13 @@ import datetime
 from edifact.message import Message
 from edifact.control import Characters
 from edifact.serializer import Serializer
-from edifact.utils import (with_segment_check,
-    separate_section, RewindIterator, DO_NOTHING, NO_ERRORS)
+from edifact.utils import (with_segment_check, RewindIterator, DO_NOTHING,
+    NO_ERRORS)
 import oyaml as yaml
 from io import open
 import copy
 import chardet
 from decimal import Decimal
-
-
-__all__ = ['Purchase', 'PurchaseConfiguration', 'PurchaseLine',
-    'EdiOrderResponseLine']
-
 
 DEFAULT_FILES_LOCATION = '/tmp/'
 
