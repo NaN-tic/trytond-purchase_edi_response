@@ -353,45 +353,33 @@ class EdiOrderResponseLine(ModelView, ModelSQL):
     'EDI ORDER Response Line'
     __name__ = 'purchase.edi.order.response.lin'
 
-    line = fields.Many2One('purchase.line', 'Line',
-        states={'readonly': True})
-    description = fields.Text('Description', size=None,
-        states={'readonly': True})
+    line = fields.Many2One('purchase.line', 'Line', readonly=True)
+    description = fields.Text('Description', size=None, readonly=True)
     changes_applied = fields.Boolean('EDI Changes Applied', states={
             'invisible': True,
-            })
+        })
     product = fields.Function(fields.Many2One('product.product', 'Product'),
         'get_product')
-    code = fields.Char('Code', states={'readonly': True})
-    line_code = fields.Char('Line Code', states={'readonly': True})
+    code = fields.Char('Code', readonly=True)
+    line_code = fields.Char('Line Code', readonly=True)
     state = fields.Selection([
             ('1', 'Added'),
             ('3', 'Changed'),
             ('5', 'Accepted'),
             ('7', 'Not accepted'),
             ('6', 'Accepted with Correction')],
-        'State', states={'readonly': True})
+        'State', readonly=True)
     quantity = fields.Float('Quantity',
-        digits=(16, Eval('unit_digits', 2)),
-        depends=['unit_digits'],
-        states={'readonly': True})
+        digits='unit', readonly=True)
     quantity_on_stock = fields.Numeric('Quantity On Stock',
-        digits=(16, Eval('unit_digits', 2)),
-        depends=['unit_digits'],
-        states={'readonly': True})
+        digits='unit', readonly=True)
     quantity_not_served = fields.Numeric('Quantity Not Served',
-        digits=(16, Eval('unit_digits', 2)),
-        depends=['unit_digits'],
-        states={'readonly': True})
-    unit = fields.Many2One('product.uom', 'Uom', states={
-            'readonly': True}, ondelete='RESTRICT')
-    unit_digits = fields.Function(fields.Integer('Unit Digits', states={
-            'invisible': True,
-            'readonly': True}), 'on_change_with_unit_digits')
-    base_amount = fields.Numeric('Base Amount', digits=price_digits, states={
-            'readonly': True})
-    total = fields.Numeric('Total', digits=price_digits, states={
-            'readonly': True})
+        digits='unit', readonly=True)
+    unit = fields.Many2One('product.uom', 'Uom', readonly=True,
+        ondelete='RESTRICT')
+    base_amount = fields.Numeric('Base Amount', digits=price_digits,
+        readonly=True)
+    total = fields.Numeric('Total', digits=price_digits, readonly=True)
     cause = fields.Selection([  # motivo #QVRLIN)
             ('AA', 'Product written off by the wholesaler'),
             ('AB', 'Product that has been left to manufacture'),
@@ -418,14 +406,10 @@ class EdiOrderResponseLine(ModelView, ModelSQL):
             ('UM', 'Unit of measure difference'),
             ('WV', 'The amount requested doesn\'t match the agreement')
             ], 'Reason', states={'readonly': True})
-    price = fields.Numeric('Price', digits=price_digits, states={
-            'readonly': True})  # PRILIN precio
-    quantity_by_price = fields.Float('Quantity by Price',  # PRILIN base
-        digits=(16, Eval('unit_digits', 2)),
-        depends=['unit_digits'],
-        states={'readonly': True})
-    delivery_date = fields.DateTime('Delivery Date', states={
-            'readonly': True})
+    price = fields.Numeric('Price', digits=price_digits, readonly=True)  # PRILIN precio
+    quantity_by_price = fields.Float('Quantity by Price',  digits='unit',
+        readonly=True) # PRILIN base
+    delivery_date = fields.DateTime('Delivery Date', readonly=True)
 
     # TODO: Apply changes to purchase lines
     # @classmethod
@@ -452,12 +436,6 @@ class EdiOrderResponseLine(ModelView, ModelSQL):
                 ('symbol', '=', UOMS_EDI_TO_TRYTON.get(edi_unit))
                 ], limit=1)
         return uom[0] if uom else None
-
-    @fields.depends('unit')
-    def on_change_with_unit_digits(self, name=None):
-        if self.unit:
-            return self.unit.digits
-        return 2
 
     def get_product(self, name):
         pass
