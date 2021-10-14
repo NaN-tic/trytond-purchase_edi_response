@@ -277,7 +277,7 @@ class Purchase(metaclass=PoolMeta):
         template_path = os.path.join(os.path.join(MODULE_PATH, 'templates'),
             template_name)
         with open(template_path, encoding='utf-8') as fp:
-            template = yaml.load(fp.read())
+            template = yaml.load(fp.read(), Loader=yaml.Loader)
         to_write = []
         result = []
         for fname in files:
